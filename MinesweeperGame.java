@@ -251,9 +251,9 @@ class MinesweeperGame extends World {
 
 }
 
-//Examples and Tests
-class Examples {
-  // Create two example cells
+// tests
+class ExamplesMines {
+  // example cells
   public void testCell(Tester t) {
     Cell cell1 = new Cell(false);
     // Cell with mine
@@ -334,7 +334,7 @@ class Examples {
 
     game.initBoard();
     
-    // Tests that when all cells without a mine are revealed the, the user has won the game
+    // Tests that when all cells without a mine are revealed the wins the game
     game.board.get(0).get(0).hasMine = false;
     game.board.get(0).get(0).isRevealed = true;
     game.board.get(0).get(1).hasMine = true;
@@ -365,6 +365,7 @@ class Examples {
     // Mouse click test for creating a flag
     game.onMouseClicked(new Posn(30, 30), "RightButton");
     t.checkExpect(game.board.get(1).get(1).hasFlag, true);
+    
     // Mouse click test for revealing a cell
     game.onMouseClicked(new Posn(0, 0), "LeftButton");
     t.checkExpect(game.board.get(0).get(0).isRevealed, true);
